@@ -1,0 +1,80 @@
+h1,
+h2 {
+  color: navy;
+  padding: 15px;
+  border: 1px solid #3e4633;
+}
+.textAccent {
+  color: #3e4633;
+  border-radius: 10px;
+  border: 1px solid lightcoral;
+  padding: 15px;
+  margin: 15px;
+}
+#sidebar {
+  color: #3e4633;
+  border-radius: 10px;
+  border: 1px solid lightcoral;
+  padding: 15px;
+  margin: 15px;
+  color: red;
+}
+.infoColumn {
+  color: #3e4633;
+  border-radius: 10px;
+  border: 1px solid lightcoral;
+  padding: 15px;
+  margin: 15px;
+}
+.parent ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.parent li {
+  border: 1px solid #3e4633;
+  border-radius: 10px;
+  padding: 15px;
+}
+.parent li:hover {
+  color: blueviolet;
+  font-size: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 5px solid green;
+  transition: all 0.3s linear;
+}
+.default {
+  border: blue 1px solid;
+  border-radius: 5px;
+}
+.default p {
+  border: green 5px solid;
+  border-radius: 9px;
+}
+.alert-base {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+}
+.mixInParam h3:first-of-type {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+  color: goldenrod;
+  border-color: #ae8319;
+}
+.mixInParam h3:nth-of-type(2) {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+  color: #ff3333;
+  border-color: #cc0000;
+}
+.mixInParam h3:last-of-type {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+  color: #00b300;
+  border-color: #004d00;
+}

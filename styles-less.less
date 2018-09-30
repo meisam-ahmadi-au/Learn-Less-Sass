@@ -1,0 +1,96 @@
+@myColor1: navy;
+@myColor2: rgb(62, 70, 51);
+@myPadding: 15px;
+@myBorder: 1px solid @myColor2;
+
+h1, h2 {
+  color: @myColor1;
+  padding: @myPadding;
+  border: @myBorder;
+}
+
+.textAccent {
+  color: @myColor2;
+  border-radius: 10px;
+  border: 1px solid lightcoral;
+  padding: @myPadding;
+  margin: @myPadding;
+}
+
+#sidebar {
+  .textAccent;
+  color: red;
+}
+.infoColumn {
+  .textAccent;
+}
+.parent {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  li {
+    border: @myBorder;
+    border-radius: 10px;
+    padding: @myPadding;
+    &:hover {
+      color: blueviolet;
+      font-size: 1rem;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 5px solid green;
+      transition: all 0.3s linear;
+    }
+  }
+}
+.box-setting (@color: blue, @width:1px ) {
+  border: @arguments solid;  // @arguments uses all parameters
+  border-radius: @width + 4; // add to width value
+}
+.default {
+  .box-setting; // reuse with default values
+  p {
+    .box-setting(@color: green, @width: 5px) // reuse with your own values
+  }
+}
+// Mixins with params
+.alert-base {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+}
+.alert(warning) {
+  .alert-base;
+  @color: goldenrod;
+  color: @color;
+  border-color: darken(@color, 10%);
+}
+.alert(error) {
+  .alert-base;
+  @color: red;
+  color: lighten(@color, 10%);
+  border-color: darken(@color, 10%);
+}
+.alert(other, @color) {
+  .alert-base;
+  color: lighten(@color, 10%);
+  border-color: darken(@color, 10%);
+}
+.mixInParam {
+  h3 {
+    @type: warning;
+    &:first-of-type {
+      .alert(@type);
+    }
+    &:nth-of-type(2) {
+      .alert(error);
+    }
+    &:last-of-type {
+      .alert(other,green);
+    }
+  }
+}
+* when (width > 50%) {
+  background-color: darkcyan;
+}

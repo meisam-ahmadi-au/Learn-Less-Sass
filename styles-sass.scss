@@ -1,0 +1,74 @@
+$myColor: navy;
+$myString: " This came from CSS file";
+$myBorder: 3px solid $myColor;
+
+h1 {
+  color: $myColor;
+}
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  li {
+    border: $myBorder;
+    padding: 10px;
+    &:last-of-type:after {
+      content: $myString;
+    }
+    &:hover {
+      border-left: 5px solid green;
+      padding-right: 8px;
+    }
+  }
+}
+
+@mixin baseBorder {
+  border: $myBorder;
+  border-color: green;
+  padding: 12px;
+  &:hover {
+    border-left: 5px solid Blue;
+    padding-right: 10px;
+  }
+}
+.mixins {
+  li {
+    @include baseBorder;
+    transition: all 0.2s ease-in-out;
+  }
+}
+// $gender: girl;
+// $myColor: if($gender=="boy", red, blue);
+.conditionals {
+  ul {
+    list-style: none;
+    li {
+      @include baseBorder;
+      &:first-of-type {
+        $gender: boy;
+        $myColor: if($gender=="boy", red, blue);
+        border-color: $myColor;
+      }
+      &:last-of-type {
+        $gender: girl;
+        $myColor: if($gender=="boy", red, blue);
+        border-color: $myColor;
+      }
+    }
+  }
+}
+@mixin border($width: 3px, $color: blue) {
+  border: solid $width $color;
+}
+.mixin-paras {
+  li {
+    @include border(5px, lightgreen );
+    &:hover {
+      @include border(5px, green);
+      transition: all 0.5s ease-in-out;
+    }
+    &:last-of-type:hover {
+      @include border(7px,red);
+    }
+  }
+}

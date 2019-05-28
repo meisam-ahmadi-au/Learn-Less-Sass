@@ -1,0 +1,63 @@
+h1 {
+  color: navy;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.list li {
+  border: 3px solid navy;
+  padding: 10px;
+}
+.list li:last-of-type:after {
+  content: " This came from CSS file";
+}
+.list li:hover {
+  border-left: 5px solid green;
+  padding-right: 8px;
+}
+
+.mixins li {
+  border: 3px solid navy;
+  border-color: green;
+  padding: 12px;
+  transition: all 0.2s ease-in-out;
+}
+.mixins li:hover {
+  border-left: 5px solid Blue;
+  padding-right: 10px;
+}
+
+.conditionals ul {
+  list-style: none;
+}
+.conditionals ul li {
+  border: 3px solid navy;
+  border-color: green;
+  padding: 12px;
+}
+.conditionals ul li:hover {
+  border-left: 5px solid Blue;
+  padding-right: 10px;
+}
+.conditionals ul li:first-of-type {
+  border-color: red;
+}
+.conditionals ul li:last-of-type {
+  border-color: blue;
+}
+
+.mixin-paras li {
+  border: solid 5px lightgreen;
+}
+.mixin-paras li:hover {
+  border: solid 5px green;
+  transition: all 0.5s ease-in-out;
+}
+.mixin-paras li:last-of-type:hover {
+  border: solid 7px red;
+}
+
+/*# sourceMappingURL=styles-sass.css.map */
